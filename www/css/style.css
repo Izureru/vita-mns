@@ -1,0 +1,14 @@
+/* Empty. Add your own CSS if you like */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300,800);
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  overflow-x: hidden;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  color: #fff;
+  background: #efefef;
+}
