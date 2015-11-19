@@ -17,7 +17,15 @@ angular.module('starter', ['ionic'])
     }
   });
 })
-.controller("UserController", function($scope) {
+.config(function($stateProvider, $urlRouterProvider){
+$urlRouterProvider.otherwise('/')
+
+  $stateProvider.state('home', {
+    url: '/',
+    template: 'index.html'
+  })
+})
+.controller("UserController", function($scope, $http) {
  
     $scope.submit = function(name, gender,age,weight,oal,noal, ePlan) {
       var num1 = 0;
@@ -118,15 +126,6 @@ angular.module('starter', ['ionic'])
           }
         }
       }
-
-      function refresh(){
-        num1 = 0;
-        num2 = 0;
-        bmr = 0;
-        pal = 0;
-        kcalDay = 0;
-      }
-
         
       function calc(){
           bmr = ((num1 * weight) + num2);
@@ -135,6 +134,16 @@ angular.module('starter', ['ionic'])
           alert("Your kcal/day is: " + kcalDay);
       }
       calc();
-      refresh();
+      getMeals(kcalDay);
+
+      function getMeals(kcalDay){
+        $http.get('http://private-25b0c4-schnap.apiary-mock.com/meals/' + kcalDay).then(function(resp) {
+          console.log('Success', resp);
+          // For JSON responses, resp.data contains the result
+        }, function(err) {
+          console.error('ERR', err);
+    // err.status will contain the status code
+        })
+      }
 }
 });
