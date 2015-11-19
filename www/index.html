@@ -28,7 +28,7 @@
       <ion-header-bar class="bar-stable">
         <h1 class="title">Ionic Blank Starter</h1>
       </ion-header-bar>
-      <ion-content ng-controller="ExampleController">
+      <ion-content ng-controller="UserController">
     <form name="myForm" novalidate>
         <div class="list">
           <label class="item item-input">
@@ -70,6 +70,18 @@
                 <option>Very Active</option>
               </select>
             </label>
+            <label class="item item-input item-select">
+              <span class="input-label">Eating Plan</span>
+              <select name="ePlan" ng-model="ePlan">
+                <option selected>General Healthy Eating</option>
+                <option>High Protein</option>
+                <option>Gluten Free</option>
+                <option>kCal Controlled</option>
+                <option>Vegetarian</option>
+                <option>High Fibre</option>
+                <option>Heart Healthy</option>
+              </select>
+            </label>
         </div>
         <div class="padding">
             <p ng-show="myForm.username.$error.required">* Username is required</p>
@@ -79,7 +91,7 @@
             <p ng-show="myForm.password.$error.minlength">* Password must be longer than 6 characters</p>
         </div>
         <div class="padding">
-            <button type="button" class="button button-block button-positive" ng-disabled="myForm.$invalid" ng-click="submit(name,gender,age,weight,oal,noal)">Submit</button>
+            <button type="button" class="button button-block button-positive" ng-disabled="myForm.$invalid" ng-click="submit(name,gender,age,weight,oal,noal, ePlan)">Submit</button>
         </div>
     </form>
 </ion-content>
