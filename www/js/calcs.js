@@ -130,7 +130,10 @@ angular.module('starter', ['ionic'])
           // For JSON responses, resp.data contains the result
           $scope.food = resp.data[0].name;
           $scope.eggs = Math.round(kcalDay / resp.data[0].kcal);
-
+          $scope.breakfast = Math.round(($scope.eggs / 10) * 2);
+          $scope.lunch = Math.round(($scope.eggs / 10) * 3);
+          $scope.dinner = Math.round(($scope.eggs / 10) * 4);
+          $scope.snack = Math.round(($scope.eggs / 10) * 1);
         }, function(err) {
           console.error('ERR', err);
     // err.status will contain the status code
