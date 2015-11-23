@@ -25,7 +25,7 @@
   <body ng-app="starter">
     <ion-tabs class="tabs-positive">
       <ion-tab icon="ion-home" ui-sref="home">
-        <ion-nav-view></ion-nav-view>
+        <ion-nav-view name="home"></ion-nav-view>
         </ion-tab>
         <ion-tab icon="ion-help" ui-sref="help">
       <ion-nav-view name="help"></ion-nav-view>
@@ -33,7 +33,7 @@
     </ion-tabs> 
     <ion-pane>
       <ion-header-bar class="bar-stable">
-        <h1 class="title">VITA-MnS</h1>
+        <h1 class="title">VITA@MNS</h1>
       </ion-header-bar>
       <ion-content ng-controller="UserController">
     <form name="myForm" novalidate>
@@ -91,17 +91,11 @@
             </label>
         </div>
         <div class="padding">
-            <p ng-show="myForm.username.$error.required">* Username is required</p>
-            <p ng-show="myForm.username.$invalid && !myForm.username.$pristine">* Username must be an email address</p>
-            <p ng-show="myForm.username.$error.minlength">* Username must be longer than 5 characters</p>
-            <p ng-show="myForm.password.$error.required">* Password is required</p>
-            <p ng-show="myForm.password.$error.minlength">* Password must be longer than 6 characters</p>
-        </div>
-        <div class="padding">
+                <span class="input-label">You can have:{{eggs}} {{food}}</span>
             <button type="button" class="button button-block button-positive" ng-disabled="myForm.$invalid" ng-click="submit(name,gender,age,weight,oal,noal, ePlan)">Submit</button>
         </div>
     </form>
-</ion-content>
+      </ion-content>
     </ion-pane>
   </body>
 </html>

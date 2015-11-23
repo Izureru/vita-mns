@@ -17,46 +17,35 @@ angular.module('starter', ['ionic'])
     }
   });
 })
-.config(function($stateProvider, $urlRouterProvider){
-$urlRouterProvider.otherwise('/')
-
-  $stateProvider.state('home', {
-    url: '/',
-    template: 'index.html'
-  })
-})
 .controller("UserController", function($scope, $http) {
+      var kcalDay = 0;
  
     $scope.submit = function(name, gender,age,weight,oal,noal, ePlan) {
       var num1 = 0;
       var num2 = 0;
       var bmr = 0;
       var pal = 0;
-      var kcalDay = 0;
+      var eggs = 190;
+
 
       if (gender == "Female"){
           setFNums();
           setFPals();
-          console.log("you're female");
         }else{
           setMNums();
           setMPals();
-          console.log("you're male");
         }
 
       function setFNums(){
         if (age == "18-29"){
           num1 = 14.8;
           num2 = 487;
-          console.log("you're in the lesser range");
         }else if(age == "30-59"){
-          console.log("you're middle age");
           num1 = 8.3;
           num2 = 846;
         }else{
           num1 = 0.038;
           num2 = 2.755;
-          console.log("you older");
         }
       }
 
@@ -129,21 +118,22 @@ $urlRouterProvider.otherwise('/')
         
       function calc(){
           bmr = ((num1 * weight) + num2);
-          console.log("bmr: " + bmr);
-          kcalDay = bmr * pal;
+          kcalDay = Math.round(bmr * pal);
           alert("Your kcal/day is: " + kcalDay);
+          $scope.getMeals(kcalDay);
       }
       calc();
-      getMeals(kcalDay);
-
-      function getMeals(kcalDay){
+};
+  $scope.getMeals = function(kcalDay){
         $http.get('http://private-25b0c4-schnap.apiary-mock.com/meals/' + kcalDay).then(function(resp) {
-          console.log('Success', resp);
+          console.log('Success', kcalDay);
           // For JSON responses, resp.data contains the result
+          $scope.food = resp.data[0].name;
+          $scope.eggs = Math.round(kcalDay / resp.data[0].kcal);
+
         }, function(err) {
           console.error('ERR', err);
     // err.status will contain the status code
         })
-      }
-}
+  }
 });
