@@ -19,6 +19,9 @@ angular.module('starter', ['ionic'])
 })
 .controller("UserController", function($scope, $http) {
       var kcalDay = 0;
+      $scope.lowCal = [];
+      $scope.medCal = [];
+      $scope.hiCal = [];
  
     $scope.submit = function(name, gender,age,weight,oal,noal, ePlan) {
       var num1 = 0;
@@ -123,13 +126,15 @@ angular.module('starter', ['ionic'])
           $scope.getMeals(kcalDay);
       }
       calc();
+
+      
 };
   $scope.getMeals = function(kcalDay){
         $http.get('http://private-25b0c4-schnap.apiary-mock.com/meals/' + kcalDay).then(function(resp) {
           console.log('Success', kcalDay);
           // For JSON responses, resp.data contains the result
           $scope.food = resp.data[0].name;
-          $scope.eggs = Math.round(kcalDay / resp.data[0].kcal);
+          $scope.eggs = Math.round(kcalDay / resp.data[0].energy);
           $scope.breakfast = Math.round(($scope.eggs / 10) * 2);
           $scope.lunch = Math.round(($scope.eggs / 10) * 3);
           $scope.dinner = Math.round(($scope.eggs / 10) * 4);
@@ -139,4 +144,14 @@ angular.module('starter', ['ionic'])
     // err.status will contain the status code
         })
   }
+
+  function split30Meals(){
+        for (var i = 0; i < 11; i++) {
+            if (resp[i].energy < 100) {
+                            $scope.shirts.push(jsonResponse[0].wardrobe[i]);
+                        } else {
+                            $scope.trousers.push(jsonResponse[0].wardrobe[i]);
+                        }
+                    }
+      }
 });
