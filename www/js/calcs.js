@@ -123,14 +123,19 @@ angular.module('starter', ['ionic'])
           $scope.getMeals(kcalDay);
       }
       calc();
+
+      
 };
   $scope.getMeals = function(kcalDay){
         $http.get('http://private-25b0c4-schnap.apiary-mock.com/meals/' + kcalDay).then(function(resp) {
           console.log('Success', kcalDay);
           // For JSON responses, resp.data contains the result
-          $scope.food = resp.data[0].name;
-          $scope.eggs = Math.round(kcalDay / resp.data[0].kcal);
-
+          $scope.food = resp.data[1].name;
+          $scope.eggs = Math.round(kcalDay / resp.data[1].kcal);
+          $scope.breakfast = Math.round(($scope.eggs / 10) * 2);
+          $scope.lunch = Math.round(($scope.eggs / 10) * 3);
+          $scope.dinner = Math.round(($scope.eggs / 10) * 4);
+          $scope.snack = Math.round(($scope.eggs / 10) * 1);
         }, function(err) {
           console.error('ERR', err);
     // err.status will contain the status code
