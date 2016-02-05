@@ -78,10 +78,20 @@
               </select>
             </label>
             <label class="item item-input item-select">
+              <span class="input-label">Meals For</span>
+              <select name="mealsfor" ng-model="mealsfor">
+                <option selected>day</option>
+                <option >week</option>
+                <option>breakfast</option>
+                <option>lunch</option>
+                <option>dinner</option>
+              </select>
+            </label>
+            <label class="item item-input item-select">
               <span class="input-label">Eating Plan</span>
               <select name="ePlan" ng-model="ePlan">
-                <option selected>General Healthy Eating</option>
-                <option>High Protein</option>
+                <option selected>he</option>
+                <option>hp</option>
                 <option>Gluten Free</option>
                 <option>kCal Controlled</option>
                 <option>Vegetarian</option>
@@ -90,11 +100,16 @@
               </select>
             </label>
         </div>
-        <div class="padding">
+        <!-- <div class="padding">
                 <span class="input-label">You can have:{{eggs}}{{ food}}</span>
                 <span class="input-label">Breakfast: {{breakfast}} Lunch:{{lunch}} Dinner:{{dinner}} Snack:{{snack}}</span>
-            <button type="button" class="button button-block button-positive" ng-disabled="myForm.$invalid" ng-click="submit(name,gender,age,weight,oal,noal, ePlan)">Submit</button>
+            <button type="button" class="button button-block button-positive" ng-disabled="myForm.$invalid" ng-click="submit(name,gender,age,weight,oal,noal, ePlan, mealsfor)">Submit</button>
+        </div> -->
+        <div class="padding" ng-repeat="meal in meals">
+                <span class="input-label">You can have:{{meal.name}}</span>
         </div>
+
+            <button type="button" class="button button-block button-positive" ng-disabled="myForm.$invalid" ng-click="submit(name,gender,age,weight,oal,noal, ePlan, mealsfor)">Submit</button>
     </form>
       </ion-content>
     </ion-pane>

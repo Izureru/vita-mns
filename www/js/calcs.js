@@ -20,6 +20,8 @@ angular.module('starter', ['ionic'])
 .controller("UserController", function($scope, $http) {
       var kcalDay = 0;
       var mealType = "";
+      var ePlan = "";
+      var mealsfor = "";
 function setMealType(){
         var now = new Date;
       console.log('=======================' + now.getHours());
@@ -58,17 +60,17 @@ function setMealType(){
             }
           }
       }
-      
+
       setMealType();
-
-
  
-    $scope.submit = function(name, gender,age,weight,oal,noal, ePlan) {
+    $scope.submit = function(name, gender,age,weight,oal,noal, ePlan, mealsfor) {
       var num1 = 0;
       var num2 = 0;
       var bmr = 0;
       var pal = 0;
       var eggs = 190;
+
+      $scope.ePlan = ePlan;
 
 
       if (gender == "Female"){
@@ -166,39 +168,35 @@ function setMealType(){
           bmr = ((num1 * weight) + num2);
           kcalDay = Math.round(bmr * pal);
           alert("Your kcal/day is: " + kcalDay);
-          $scope.getMeals(kcalDay);
-          // $scope.getMealy(kcalDay);
+          // $scope.getMeals(kcalDay);
+          $scope.getMealy(kcalDay, ePlan, mealsfor);
 
       }
       calc();
-
       
 };
-  $scope.getMeals = function(kcalDay){
-        $http.get('http://private-25b0c4-schnap.apiary-mock.com/meals/' + kcalDay).then(function(resp) {
-          console.log('Success', kcalDay);
+  // $scope.getMeals = function(kcalDay){
+  //       $http.get('http://private-25b0c4-schnap.apiary-mock.com/meals/' + kcalDay).then(function(resp) {
+  //         console.log('Success', kcalDay);
+  //         // For JSON responses, resp.data contains the result
+  //         $scope.food = resp.data[1].name;
+  //         $scope.eggs = Math.round(kcalDay / resp.data[1].kcal);
+  //         $scope.breakfast = Math.round(($scope.eggs / 10) * 2);
+  //         $scope.lunch = Math.round(($scope.eggs / 10) * 3);
+  //         $scope.dinner = Math.round(($scope.eggs / 10) * 4);
+  //         $scope.snack = Math.round(($scope.eggs / 10) * 1);
+  //       }, function(err) {
+  //         console.error('ERR', err);
+  //   // err.status will contain the status code
+  //       })
+  // };
+  $scope.getMealy = function(kcalDay, ePlan, mealsfor){
+        $http.get('http://localhost:4000/v1/meals/' + kcalDay + '/' + ePlan + '/' + mealsfor).then(function(resp) {
+          console.log('Success', kcalDay + " " + ePlan + " " + mealsfor);
+          console.log(resp.data);
+          $scope.meals = resp.data;
           // For JSON responses, resp.data contains the result
-          $scope.food = resp.data[1].name;
-          $scope.eggs = Math.round(kcalDay / resp.data[1].kcal);
-          $scope.breakfast = Math.round(($scope.eggs / 10) * 2);
-          $scope.lunch = Math.round(($scope.eggs / 10) * 3);
-          $scope.dinner = Math.round(($scope.eggs / 10) * 4);
-          $scope.snack = Math.round(($scope.eggs / 10) * 1);
-        }, function(err) {
-          console.error('ERR', err);
-    // err.status will contain the status code
-        })
-  };
-  $scope.getMealy = function(kcalDay, eplan){
-        $http.get('http://private-25b0c4-schnap.apiary-mock.com/meals/?kcal=' + kcalDay + '&mealType=' + mealType).then(function(resp) {
-          console.log('Success', kcalDay + " " + mealType);
-          // For JSON responses, resp.data contains the result
-          $scope.food = resp.data[1].name;
-          $scope.eggs = Math.round(kcalDay / resp.data[1].kcal);
-          $scope.breakfast = Math.round(($scope.eggs / 10) * 2);
-          $scope.lunch = Math.round(($scope.eggs / 10) * 3);
-          $scope.dinner = Math.round(($scope.eggs / 10) * 4);
-          $scope.snack = Math.round(($scope.eggs / 10) * 1);
+
         }, function(err) {
           console.error('ERR', err);
     // err.status will contain the status code
