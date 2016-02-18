@@ -78,10 +78,10 @@ body {
 }
 
 .wrapper {
-	padding-left: 200px;
-    padding-right: 200px;
-    padding-top: 50px;
-    padding-bottom: 50px;
+	padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 4%;
+    padding-bottom: 4%;
 }
 
 h1 {
@@ -103,13 +103,16 @@ h4 {
 
 .ms_header {
 	height: 180px;
-	width: 100%;
 	background-image: url("../img/ms_header.png");
+	background-size: 100%;
+	background-repeat: none;
 }
 
 .ms_footer {
 	height: 180px;
 	width: 100%;
 	background-image: url("../img/ms_footer.png");
+	background-size: 100%;
+	background-repeat: none;
 	padding-bottom: 480px;
 }
