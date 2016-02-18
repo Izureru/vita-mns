@@ -124,6 +124,10 @@ h4 {
 	background-repeat: no-repeat;
 }
 
+input {
+	float: right;
+}
+
 .button {
 	height: 52px;
 	font-weight: lighter;
@@ -158,11 +162,17 @@ h4 {
     font-style: italic;
 }
 
+.results {
+	color: #000;
+	text-align: center;
+	width: 100%;
+}
+
 .ms_footer {
 	height: 180px;
 	width: 100%;
 	background-image: url("../img/ms_footer.png");
 	background-size: 100%;
 	background-repeat: no-repeat;
-	padding-bottom: 480px;
+	padding-bottom: 490px;
 }
