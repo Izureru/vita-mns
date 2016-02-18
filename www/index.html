@@ -35,6 +35,7 @@
         </ion-header-bar> -->
         <ion-content ng-controller="UserController">
         <div class="ms_header"></div>
+
             <form name="myForm" novalidate>
                 <div class="list">
                     <label class="item item-input">
@@ -94,6 +95,7 @@
                     <span class="input-label">Breakfast: {{breakfast}} Lunch:{{lunch}} Dinner:{{dinner}} Snack:{{snack}}</span>
                     <button type="button" class="button button-block button-positive" ng-disabled="myForm.$invalid" ng-click="submit(name,gender,age,weight,oal,noal, ePlan)">Submit</button>
                 </div>
+                <div class="ms_footer"></div>
             </form>
         </ion-content>
     </ion-pane>

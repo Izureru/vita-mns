@@ -1,21 +1,68 @@
-/* Empty. Add your own CSS if you like */
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300,800);
 
-* {
-  box-sizing: border-box;
+/*-----------------------FONTS-----------------------*/
+@font-face {
+    font-family: msLondon;
+    src: url('../fonts/MSLondon/MSLondon-Regular.ttf');
 }
-html,
+
+@font-face {
+    font-family: msLondon;
+    font-weight: bold;
+    src: url('../fonts/MSLondon/MSLondon-Bold.ttf');
+}
+
+@font-face {
+    font-family: msLondon;
+    font-style: italic;
+    src: url('../fonts/MSLondon/MSLondon-Italic.ttf');
+}
+
+@font-face {
+    font-family: msLondon;
+    font-weight: lighter;
+    src: url('../fonts/MSLondon/MSLondon-Light.ttf');
+}
+
+@font-face {
+    font-family: msLondon;
+    font-style: italic;
+    font-weight: bold;
+    src: url('../fonts/MSLondon/MSLondon-BoldItalic.ttf');
+}
+
+@font-face {
+    font-family: msLondon;
+    font-style: italic;
+    font-weight: lighter;
+    src: url('../fonts/MSLondon/MSLondon-LightItalic.ttf');
+}
+
+/*-----------------------MS COLOURS-----------------------*/
+/*$white: #FFFFFF;
+$ms-orange: #EA5B1B;
+$ms-green: #76B82A;
+$grey-dark: #212121;
+$grey-medium: #7C7C7C;
+$grey-light: #DCDCDC;
+$grey-bg: #EDEDED;*/
+
 body {
   overflow-x: hidden;
-  font-family: "Open Sans", sans-serif;
+  font-family: msLondon;
   font-weight: 300;
   color: #fff;
   background: #efefef;
 }
 
 .ms_header {
-	height: 144px;
+	height: 180px;
 	width: 100%;
 	background-image: url("../img/ms_header.png");
+}
 
+.ms_footer {
+	height: 180px;
+	width: 100%;
+	background-image: url("../img/ms_footer.png");
+	padding-bottom: 480px;
 }
