@@ -34,69 +34,74 @@
             <h1 class="title"></h1>
         </ion-header-bar> -->
         <ion-content ng-controller="UserController">
-        <div class="ms_header"></div>
+            <div class="ms_header"></div>
+            <div class="wrapper">
+              <h1>YOUR EATING PLAN</h1>
+              <h4>Fill out the details below to generate your personalised eating plan</h4>
 
-            <form name="myForm" novalidate>
-                <div class="list">
-                    <label class="item item-input">
-                        <span class="input-label">Name</span>
-                        <input type="text" name="name" ng-model="name" required>
-                    </label>
-                    <label class="item item-select">
-                        <span class="input-label">Gender</span>
-                        <select name="gender" ng-model="gender">
-                            <option selected>Male</option>
-                            <option>Female</option>
-                        </select>
-                    </label>
-                    <label class="item item-input item-select">
-                        <span class="input-label">Age</span>
-                        <select name="age" ng-model="age">
-                            <option selected>18-29</option>
-                            <option>30-59</option>
-                            <option>60+</option>
-                        </select>
-                    </label>
-                    <label class="item item-input">
-                        <span class="input-label">Weight(kg)</span>
-                        <input type="number" name="weight" ng-model="weight">
-                    </label>
-                    <label class="item item-input item-select">
-                        <span class="input-label">Occupational AL</span>
-                        <select name="oal" ng-model="oal">
-                            <option selected>Non-active</option>
-                            <option>Moderately Active</option>
-                            <option>Very Active</option>
-                        </select>
-                    </label>
-                    <label class="item item-input item-select">
-                        <span class="input-label">Non-Occupational AL</span>
-                        <select name="noal" ng-model="noal">
-                            <option selected>Non-active</option>
-                            <option>Moderately Active</option>
-                            <option>Very Active</option>
-                        </select>
-                    </label>
-                    <label class="item item-input item-select">
-                        <span class="input-label">Eating Plan</span>
-                        <select name="ePlan" ng-model="ePlan">
-                            <option selected>General Healthy Eating</option>
-                            <option>High Protein</option>
-                            <option>Gluten Free</option>
-                            <option>kCal Controlled</option>
-                            <option>Vegetarian</option>
-                            <option>High Fibre</option>
-                            <option>Heart Healthy</option>
-                        </select>
-                    </label>
-                </div>
-                <div class="padding">
-                    <span class="input-label">You can have:{{eggs}}{{ food}}</span>
-                    <span class="input-label">Breakfast: {{breakfast}} Lunch:{{lunch}} Dinner:{{dinner}} Snack:{{snack}}</span>
-                    <button type="button" class="button button-block button-positive" ng-disabled="myForm.$invalid" ng-click="submit(name,gender,age,weight,oal,noal, ePlan)">Submit</button>
-                </div>
-                <div class="ms_footer"></div>
-            </form>
+              <form name="myForm" novalidate>
+                  <div class="list">
+                      <label class="item item-input">
+                          <span class="input-label">Name</span>
+                          <input type="text" name="name" ng-model="name" required>
+                      </label>
+                      <label class="item item-select">
+                          <span class="input-label">Gender</span>
+                          <select name="gender" ng-model="gender">
+                              <option selected>Male</option>
+                              <option>Female</option>
+                          </select>
+                      </label>
+                      <label class="item item-input item-select">
+                          <span class="input-label">Age</span>
+                          <select name="age" ng-model="age">
+                              <option selected>18-29</option>
+                              <option>30-59</option>
+                              <option>60+</option>
+                          </select>
+                      </label>
+                      <label class="item item-input">
+                          <span class="input-label">Weight(kg)</span>
+                          <input type="number" name="weight" ng-model="weight">
+                      </label>
+                      <label class="item item-input item-select">
+                          <span class="input-label">Occupational AL</span>
+                          <select name="oal" ng-model="oal">
+                              <option selected>Non-active</option>
+                              <option>Moderately Active</option>
+                              <option>Very Active</option>
+                          </select>
+                      </label>
+                      <label class="item item-input item-select">
+                          <span class="input-label">Non-Occupational AL</span>
+                          <select name="noal" ng-model="noal">
+                              <option selected>Non-active</option>
+                              <option>Moderately Active</option>
+                              <option>Very Active</option>
+                          </select>
+                      </label>
+                      <label class="item item-input item-select">
+                          <span class="input-label">Eating Plan</span>
+                          <select name="ePlan" ng-model="ePlan">
+                              <option selected>General Healthy Eating</option>
+                              <option>High Protein</option>
+                              <option>Gluten Free</option>
+                              <option>kCal Controlled</option>
+                              <option>Vegetarian</option>
+                              <option>High Fibre</option>
+                              <option>Heart Healthy</option>
+                          </select>
+                      </label>
+                  </div>
+                  <div class="padding">
+                      <span class="input-label">You can have:{{eggs}}{{ food}}</span>
+                      <span class="input-label">Breakfast: {{breakfast}} Lunch:{{lunch}} Dinner:{{dinner}} Snack:{{snack}}</span>
+                      <button type="button" class="button button-block button-positive" ng-disabled="myForm.$invalid" ng-click="submit(name,gender,age,weight,oal,noal, ePlan)">Submit</button>
+                  </div>
+              </form>
+
+            </div>
+            <div class="ms_footer"></div>
         </ion-content>
     </ion-pane>
 </body>
