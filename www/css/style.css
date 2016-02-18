@@ -12,3 +12,10 @@ body {
   color: #fff;
   background: #efefef;
 }
+
+.ms_header {
+	height: 144px;
+	width: 100%;
+	background-image: url("../img/ms_header.png");
+
+}
