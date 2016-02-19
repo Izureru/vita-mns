@@ -3,24 +3,24 @@
 @font-face {
     font-family: msLeeds;
     font-weight: bold;
-    src: url('../fonts/MSLeeds-Bold.ttf');
+    src: url('../fonts/MSLeeds/MSLeeds-Bold.ttf');
 }
 @font-face {
     font-family: msLeeds;
     font-weight: lighter;
-    src: url('../fonts/MSLeeds-Light.ttf');
+    src: url('../fonts/MSLeeds/MSLeeds-Light.ttf');
 }
 @font-face {
     font-family: msLeeds;
     font-style: italic;
     font-weight: bold;
-    src: url('../fonts/MSLeeds-BoldItalic.ttf');
+    src: url('../fonts/MSLeeds/MSLeeds-BoldItalic.ttf');
 }
 @font-face {
     font-family: msLeeds;
     font-style: italic;
     font-weight: lighter;
-    src: url('../fonts/&SLeeds-LightItalic.ttf');
+    src: url('../fonts/MSLeeds/MSLeeds-LightItalic.ttf');
 }
 
 @font-face {
@@ -148,7 +148,7 @@ input {
 }
 
 .button.button-positive:hover {
-    border-color: #000;
+    border-color: #333;
     background-color: #333;
     box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1);
     color: #fff;
@@ -175,4 +175,31 @@ input {
 	background-size: 100%;
 	background-repeat: no-repeat;
 	padding-bottom: 490px;
+}
+
+@media screen and (max-width: 386px) {
+    .ms_header {
+        height: 60px;
+    }
+
+    .wrapper {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    h4 {
+        font-size: 18px;
+    }
+
+    .ms_footer {
+        padding-bottom: 185px;
+    }
 }
