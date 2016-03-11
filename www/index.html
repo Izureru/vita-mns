@@ -84,30 +84,37 @@
                           </select>
                       </label>
                       <label class="item item-input item-select">
-                          <span class="input-label">Eating Plan</span>
-                          <select name="ePlan" ng-model="ePlan">
-                              <option selected>General Healthy Eating</option>
-                              <option>High Protein</option>
-                              <option>Gluten Free</option>
-                              <option>kCal Controlled</option>
-                              <option>Vegetarian</option>
-                              <option>High Fibre</option>
-                              <option>Heart Healthy</option>
-                          </select>
+                        <span class="input-label">Meals For</span>
+                        <select name="mealsfor" ng-model="mealsfor">
+                          <option selected>day</option>
+                          <option >week</option>
+                          <option>snacks</option>
+                          <option>breakfast</option>
+                          <option>lunch</option>
+                          <option>dinner</option>
+                        </select>
                       </label>
+                      <label class="item item-input item-select">
+                        <span class="input-label">Eating Plan</span>
+                        <select name="ePlan" ng-model="ePlan">
+                          <option selected>he</option>
+                          <option>hp</option>
+                          <option>Gluten Free</option>
+                          <option>kCal Controlled</option>
+                          <option>Vegetarian</option>
+                          <option>High Fibre</option>
+                          <option>Heart Healthy</option>
+                        </select>
+                    </label>
                   </div>
                   <div class="padding">
-                      <button type="button" class="button button-block button-positive" ng-disabled="myForm.$invalid" ng-click="submit(name,gender,age,weight,oal,noal, ePlan)">Generate Plan</button>
-                      <div class="results">
-                          <span> You can have: {{eggs}} {{food}} </span><br><br>
-                          <span> Breakfast: {{breakfast}} </span><br> 
-                          <span> Lunch: {{lunch}} </span><br> 
-                          <span> Dinner: {{dinner}}</span><br>
-                          <span> Snack: {{snack}} </span><br>
+                      <button type="button" class="button button-block button-positive" ng-disabled="myForm.$invalid" ng-click="submit(name,gender,age,weight,oal,noal, ePlan, mealsfor)">Generate Plan</button>
+                      <div class="results" ng-repeat="meal in meals">
+                          <span class="input-label">You can have:{{meal.Type}}</span>
+                          <span class="input-label">You can have:{{meal.Stores.name}}</span></br>
                       </div>
                   </div>
               </form>
-
             </div>
             <div class="ms_footer"></div>
         </ion-content>
