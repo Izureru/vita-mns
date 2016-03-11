@@ -3,24 +3,24 @@
 @font-face {
     font-family: msLeeds;
     font-weight: bold;
-    src: url('../fonts/MSLeeds-Bold.ttf');
+    src: url('../fonts/MSLeeds/MSLeeds-Bold.ttf');
 }
 @font-face {
     font-family: msLeeds;
     font-weight: lighter;
-    src: url('../fonts/MSLeeds-Light.ttf');
+    src: url('../fonts/MSLeeds/MSLeeds-Light.ttf');
 }
 @font-face {
     font-family: msLeeds;
     font-style: italic;
     font-weight: bold;
-    src: url('../fonts/MSLeeds-BoldItalic.ttf');
+    src: url('../fonts/MSLeeds/MSLeeds-BoldItalic.ttf');
 }
 @font-face {
     font-family: msLeeds;
     font-style: italic;
     font-weight: lighter;
-    src: url('../fonts/&SLeeds-LightItalic.ttf');
+    src: url('../fonts/MSLeeds/MSLeeds-LightItalic.ttf');
 }
 
 @font-face {
@@ -78,38 +78,128 @@ body {
 }
 
 .wrapper {
-	padding-left: 200px;
-    padding-right: 200px;
-    padding-top: 50px;
-    padding-bottom: 50px;
+	padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 4%;
 }
 
 h1 {
 	font-family: msLeeds;
 	text-align: center;
 	font-size: 52px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
+}
+
+h2 {
+	font-style: bold;
+	text-align: center;
+	font-size: 30px;
+	margin-bottom: 3%;
 }
 
 h4 {
 	font-family: msLeeds;
 	font-size: 24px;
 	font-style: italic;
-	font-weight: light;
+	font-weight: lighter;
 	text-align: center;
 	color: #4d4d4d;
-	margin-bottom: 50px;
+}
+
+.tabs-positive > .tabs, .tabs.tabs-positive {
+    border-color: #333333;
+    background-color: #333333;
+    background-image: linear-gradient(0deg, #000000, #000000 50%, transparent 50%);
+}
+
+.title_section {
+	margin-top: 6%;
+	margin-bottom: 6%;
 }
 
 .ms_header {
 	height: 180px;
-	width: 100%;
 	background-image: url("../img/ms_header.png");
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+input {
+	float: right;
+}
+
+.button {
+	height: 52px;
+	font-weight: lighter;
+	font-size: 24px;
+}
+
+.button.disabled, .button[disabled] {
+    opacity: .4;
+    cursor: default !important;
+    pointer-events: none;
+}
+
+.button.button-positive {
+	border: 3px solid;
+    border-color: #333;
+    background-color: #fff;
+    color: #000;
+}
+
+.button.button-positive:hover {
+    border-color: #333;
+    background-color: #333;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+.button.button-positive.active, .button.button-positive.activated {
+    border-color: #000;
+    background-color: #333;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    font-style: italic;
+}
+
+.results {
+	color: #000;
+	text-align: center;
+	width: 100%;
 }
 
 .ms_footer {
 	height: 180px;
 	width: 100%;
 	background-image: url("../img/ms_footer.png");
-	padding-bottom: 480px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	padding-bottom: 490px;
+}
+
+@media screen and (max-width: 386px) {
+    .ms_header {
+        height: 60px;
+    }
+
+    .wrapper {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    h4 {
+        font-size: 18px;
+    }
+
+    .ms_footer {
+        padding-bottom: 182px;
+    }
 }
