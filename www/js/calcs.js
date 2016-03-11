@@ -177,7 +177,7 @@ function setMealType(){
 };
 
   $scope.getMealy = function(kcalDay, ePlan, mealsfor){
-        $http.get('http://localhost:4000/v1/meals/' + kcalDay + '/' + ePlan + '/' + mealsfor).then(function(resp) {
+        $http.get('http://7c098fb0.ngrok.com/v1/meals/' + kcalDay + '/' + ePlan + '/' + mealsfor).then(function(resp) {
           console.log('Success', kcalDay + " " + ePlan + " " + mealsfor);
           console.log(resp.data);
           $scope.meals = resp.data;
