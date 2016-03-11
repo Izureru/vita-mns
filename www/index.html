@@ -110,8 +110,8 @@
                   <div class="padding">
                       <button type="button" class="button button-block button-positive" ng-disabled="myForm.$invalid" ng-click="submit(name,gender,age,weight,oal,noal, ePlan, mealsfor)">Generate Plan</button>
                       <div class="results" ng-repeat="meal in meals">
-                          <span class="input-label">You can have:{{meal.Type}}</span>
-                          <span class="input-label">You can have:{{meal.Stores.name}}</span></br>
+                          <span class="input-label">Food Type:{{meal.Type}}</span>
+                          <span class="input-label">You can have:{{meal.Stores.name}}</span>
                       </div>
                   </div>
               </form>
@@ -120,5 +120,4 @@
         </ion-content>
     </ion-pane>
 </body>
-
 </html>
