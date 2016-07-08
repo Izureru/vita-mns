@@ -128,8 +128,20 @@ h4 {
 	margin-top: 6%;
 	margin-bottom: 6%;
     border: 1px solid #000000;
-    height: 600px;
+    height: 592px;
     position: relative;
+}
+
+.get_started_btn {
+    margin-top: 56px;
+    width: 280px;
+    height: 52px;
+    font-size: 22px;
+    background-color: #CADB59;
+    background: -webkit-linear-gradient(top, #D4E65C 0, #B5C54A 100%);
+    border: 1px solid #CADB59;
+    font-weight: bold;
+    font-family: msLondon;
 }
 
 .text_wrapper {
